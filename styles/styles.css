@@ -1,0 +1,99 @@
+body{
+    background-color:floralwhite;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: flex-end
+    
+}
+
+nav > ul > li{
+    margin: 20px;
+    list-style-type: none;
+}
+
+nav > ul > li a {
+    text-decoration: none;
+    color:sienna;
+    font-weight: bold;
+}
+
+main {
+    color:sienna;
+  text-align: center;
+}
+
+
+
+#portraitLandingPage{
+    width: 35%;
+}
+
+.skills-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.skill-card{
+    background: #ffd4acce;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 12px;
+    padding: 12px;
+    font-size: 1.3em;
+    }
+
+#contact-form {
+    background-color: rgba(211, 211, 211, 0.438);
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form-row{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+} 
+
+@media((min-width: 481px) and (max-width: 768px)){
+    .contact-form-row{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin: 10px;
+}
+
+.skills-container{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    
+}
+
+.skill-card{
+    margin: 6px;
+    }
+   
+
+}
+
+@media(min-width: 769px){
+    .contact-form-row{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin: 10px;
+}
+
+.skills-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+    
+}

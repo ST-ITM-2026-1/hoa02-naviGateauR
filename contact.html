@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Contact Page of my website</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+      <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+        <main>
+            <h1>Get in touch, stalkers!</h1>
+            <form id="contact-form">
+                <div class="contact-form-row">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" name="first-name" required placeholder="first name">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" name="last-name">
+                </div>
+
+                <div class="contact-form-row">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" name="phone" required pattern="[\d\s\-\+$$$$]{10,20}" placeholder="+41 79 123 45 67">
+                </div>
+
+                 <div class="contact-form-row">
+                    <label for="email">E-Mail:</label>
+                    <input type="email" name="email" required placeholder="bla@bla.com">
+                </div>
+
+                <div class="contact-form-row">
+                     <label for="message">Your message:</label>
+                    <textarea id="textarea-message" name="message" rows="7" cols="30" required minlength="2" maxlength="30" placeholder="keep it short!"></textarea>
+                    
+                </div>
+                <button type="submit">Submit</button>
+
+            </form>
+
+        </main>
+</body>
+</html>
