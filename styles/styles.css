@@ -5,14 +5,14 @@
     --form-bg: rgba(211, 211, 211, 0.438);
 }
 
-/* @media(prefers-color-scheme: dark){
+@media(prefers-color-scheme: dark){
     :root {
     --bg-color: #2d251e;          
     --text-color: #ffb380;        
     --card-bg: #6b4f3dcc;         
     --form-bg: rgba(80, 70, 60, 0.5); 
     }
-} */
+}
 
 
 [color-scheme = dark]:root {
