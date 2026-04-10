@@ -1,52 +1,67 @@
-body{
-    background-color:floralwhite;
+:root {
+    --bg-color: floralwhite;
+    --text-color: sienna;
+    --card-bg: #ffd4acce;
+    --form-bg: rgba(211, 211, 211, 0.438);
+}
+
+@media(prefers-color-scheme: dark){
+    :root {
+    --bg-color: #2d251e;          /* Sehr dunkles, warmes Grau */
+    --text-color: #ffb380;        /* Sanftes, helles Sienna */
+    --card-bg: #6b4f3dcc;         /* Durchsichtiges, mitteldunkles Braun */
+    --form-bg: rgba(80, 70, 60, 0.5); /* Sehr durchsichtiger Hintergrund */
+}
+}
+
+
+
+body {
+    background-color: var(--bg-color);
 }
 
 nav > ul {
     display: flex;
     justify-content: flex-end
-    
 }
 
-nav > ul > li{
+nav > ul > li {
     margin: 20px;
     list-style-type: none;
 }
 
 nav > ul > li a {
     text-decoration: none;
-    color:sienna;
+    color: var(--text-color);
     font-weight: bold;
 }
 
 main {
-    color:sienna;
-  text-align: center;
+    color: var(--text-color);
+    text-align: center;
 }
 
-
-
-#portraitLandingPage{
+#portraitLandingPage {
     width: 35%;
 }
 
-.skills-container{
+.skills-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
-.skill-card{
-    background: #ffd4acce;
+.skill-card {
+    background: var(--card-bg);
     border: 2px solid black;
     border-radius: 5px;
     margin: 12px;
     padding: 12px;
     font-size: 1.3em;
-    }
+}
 
 #contact-form {
-    background-color: rgba(211, 211, 211, 0.438);
+    background-color: var(--form-bg);
     border-radius: 5px;
     padding: 20px;
     max-width: 600px;
@@ -97,3 +112,5 @@ main {
 }
     
 }
+
+
