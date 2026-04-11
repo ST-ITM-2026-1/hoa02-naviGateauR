@@ -19,15 +19,15 @@ function init(){
     }
 
     root = document.querySelector(":root");
-    iconOpenEye = document.querySelector(".icon-eye-dark");
-    iconClosedEye = document.querySelector(".icon-eye-light");
+    iconOpenEye = document.querySelector(".icon-eye-light");
+    iconClosedEye = document.querySelector(".icon-eye-dark");
 
     const savedColorScheme = localStorage.getItem("color-scheme"); 
     if(savedColorScheme === "dark"){
         root.setAttribute("color-scheme", "dark");
-        openEye();
-    } else {
         closeEye();
+    } else {
+        openEye();
     }
     
 };
@@ -37,11 +37,11 @@ function switchTheme(){
     if(root.getAttribute("color-scheme") !== "dark"){
         root.setAttribute("color-scheme", "dark");
         localStorage.setItem("color-scheme", "dark");
-        openEye();
+        closeEye();
     } else {
         root.setAttribute("color-scheme", "light");
         localStorage.setItem("color-scheme", "light");
-        closeEye();
+        openEye();
     }
 }
 
