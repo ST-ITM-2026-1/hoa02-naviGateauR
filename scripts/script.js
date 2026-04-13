@@ -4,6 +4,8 @@
 let root;
 let iconOpenEye;
 let iconClosedEye;
+let test;
+
 
 // DOM aufbauen:
 document.addEventListener("DOMContentLoaded", init);
@@ -29,7 +31,18 @@ function init(){
     } else {
         openEye();
     }
+
+    test = document.querySelector(".test");
+    const filterButtons = document.querySelector(".filter-buttons")
     
+    function handleClick(event){
+        if(event.target.hasAttribute("value")){
+            console.log("button clicked");
+            test.textContent = `Filter: ${event.target.innerHTML}`;
+        }
+    }       
+
+    filterButtons.addEventListener("click", handleClick);
 };
 
 function switchTheme(){

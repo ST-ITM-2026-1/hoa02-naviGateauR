@@ -49,19 +49,16 @@ main {
     text-align: center;
 }
 
-.filter-menu-bar{
+.filter-buttons{
     display: flex;
     justify-content: center;
 }
 
-.filter-menu-bar > li{
-    display: flex;
-    justify-content: center;
+.filter-buttons > ul > li{
     background: var(--card-bg);
     border: 2px solid black;
     border-radius: 5px;
     padding: 10px;
-    
 }
 
 #portraitLandingPage {
@@ -158,7 +155,7 @@ main {
 .projects-container{
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 0 auto;
     max-width:  75%;
 }
 
@@ -181,7 +178,7 @@ main {
 .projects-container{
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 0 auto;
     max-width: 50%;
 }
     
