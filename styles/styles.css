@@ -57,7 +57,6 @@ main {
 .projects-container{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
 }
 
 
@@ -69,6 +68,28 @@ main {
     padding: 12px;
     font-size: 1.3em;
 }
+
+.project-category-type{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.project-category-origin-own{
+    background-color:darkkhaki;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 25px;
+}
+
+.project-category-origin-foreign{
+    background-color:lightskyblue;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 25px;
+}
+
 
 .skills-container {
     display: flex;
@@ -118,7 +139,13 @@ main {
 .skill-card{
     margin: 6px;
     }
-   
+
+.projects-container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width:  75%;
+}
 
 }
 
@@ -134,6 +161,13 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.projects-container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 50%;
 }
     
 }
