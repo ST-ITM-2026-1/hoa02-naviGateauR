@@ -49,6 +49,21 @@ main {
     text-align: center;
 }
 
+.filter-menu-bar{
+    display: flex;
+    justify-content: center;
+}
+
+.filter-menu-bar > li{
+    display: flex;
+    justify-content: center;
+    background: var(--card-bg);
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+
 #portraitLandingPage {
     width: 35%;
 }
