@@ -4,6 +4,7 @@
     --card-bg: #ffd4acce;
     --profile-bg: #fff1dd;
     --form-bg: rgba(211, 211, 211, 0.438);
+    --biotext-bg: #fff1dd;
 }
 
 @media(prefers-color-scheme: dark){
@@ -13,6 +14,7 @@
     --card-bg: #6b4f3dcc;         
     --profile-bg:rgba(80, 70, 60, 1);
     --form-bg: rgba(80, 70, 60, 1);  
+    --biotext-bg: rgba(80, 70, 60, 1);
     }
 }
 
@@ -23,6 +25,7 @@
     --card-bg: #6b4f3dcc; 
     --profile-bg:rgba(80, 70, 60, 1);
     --form-bg: rgba(80, 70, 60, 1); 
+    --biotext-bg: rgba(80, 70, 60, 1);
     }
 
 
@@ -52,6 +55,23 @@ main {
     text-align: center;
 }
 
+#portrait-landing-page {
+    width: 35%;
+}
+
+#bio-landing-page {
+    font-size: 1.2em;
+    display: flex;
+    max-width: 50%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    background-color: var(--biotext-bg);
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+
 .filter-buttons{
     display: flex;
     justify-content: center;
@@ -64,9 +84,6 @@ main {
     padding: 10px;
 }
 
-#portraitLandingPage {
-    width: 35%;
-}
 
 
 .projects-container{
