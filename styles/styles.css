@@ -2,6 +2,7 @@
     --bg-color: floralwhite;
     --text-color: sienna;
     --card-bg: #ffd4acce;
+    --profile-bg: #fff1dd;
     --form-bg: rgba(211, 211, 211, 0.438);
 }
 
@@ -10,7 +11,8 @@
     --bg-color: #2d251e;          
     --text-color: #ffb380;        
     --card-bg: #6b4f3dcc;         
-    --form-bg: rgba(80, 70, 60, 0.5); 
+    --profile-bg:rgba(80, 70, 60, 1);
+    --form-bg: rgba(80, 70, 60, 1);  
     }
 }
 
@@ -18,8 +20,9 @@
 [color-scheme = dark]:root {
     --bg-color: #2d251e;          
     --text-color: #ffb380;        
-    --card-bg: #6b4f3dcc;         
-    --form-bg: rgba(80, 70, 60, 0.5); 
+    --card-bg: #6b4f3dcc; 
+    --profile-bg:rgba(80, 70, 60, 1);
+    --form-bg: rgba(80, 70, 60, 1); 
     }
 
 
@@ -100,6 +103,17 @@ main {
     border-radius: 5px;
     padding: 5px;
     margin: 25px;
+}
+
+.git-profile{
+    background: var(--profile-bg);
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 12px;
+    padding: 12px;
+    font-size: 1.3em;
+    max-width: 100%;
+
 }
 
 .hidden{
