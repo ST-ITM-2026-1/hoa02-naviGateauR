@@ -7,9 +7,13 @@ let iconClosedEye;
 let test;
 let projectCards;
 
+const urlGitHubProfileData = "https://api.github.com/users/naviGateauR"
+const urlGitHubRepositories = "https://api.github.com/users/naviGateauR/repos"
+
 
 // DOM aufbauen:
 document.addEventListener("DOMContentLoaded", init);
+// document.addEventListener("DOMContentLoaded", buildProfileData);
 
 function init() {
     // we now have access to the DOM tree!
@@ -34,16 +38,18 @@ function init() {
     }
 
     test = document.querySelector(".test");
-    const filterButtons = document.querySelector(".filter-buttons")
-    if (filterButtons){
-        filterButtons.addEventListener("click", handleClick);
-    } else {
-        console.log("no filter buttons on this page!");
-    }
+    const filterButtons = document.querySelector(".filter-buttons");
+if (filterButtons) {
+    filterButtons.addEventListener("click", handleClick);
+} else {
+    console.log("no filter buttons on this page!");
+}
 
     projectCards = document.querySelectorAll(".project-card");
     projectCards.forEach((card) => console.log(card));
 
+    loadGitlabGithubData(urlGitHubProfileData);
+    loadGitlabGithubData(urlGitHubRepositories);
 }
 
 function handleClick(event) {
@@ -95,3 +101,31 @@ function closeEye() {
     iconOpenEye.style.display = 'none';
     iconClosedEye.style.display = 'flex';
 }
+
+
+async function loadGitlabGithubData(URL){
+    try{
+        // TODO 1: Use fetch() with one API endpoint
+        const response = await fetch(URL);
+        
+        // TODO 2: Convert the response to JSON
+        const data = await response.json();
+    
+        // TODO 3: Inspect the data using console.log()
+        console.log("here comes the data")
+        console.log(data);
+
+        // return data: 
+        return data;
+
+    }
+    catch(error){
+        console.log("oops, an error occured! have a look: ", error)
+    }
+}
+
+// async function buildProfileData(){
+//     const bla = loadGitlabGithubData(urlGitHubProfileData);
+//     console.log("check this out")
+//     console.log(bla)
+// }
