@@ -88,18 +88,22 @@ main {
     margin: 5px;
 }
 
-.project-category-origin-own{
+#origin-own{
     background-color:darkkhaki;
     border-radius: 5px;
     padding: 5px;
     margin: 25px;
 }
 
-.project-category-origin-foreign{
+#origin-foreign{
     background-color:lightskyblue;
     border-radius: 5px;
     padding: 5px;
     margin: 25px;
+}
+
+.hidden{
+    display: none;
 }
 
 
