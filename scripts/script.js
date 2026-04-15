@@ -46,11 +46,16 @@ if (filterButtons) {
 }
 
     projectCards = document.querySelectorAll(".project-card");
-    projectCards.forEach((card) => console.log(card));
+    // projectCards.forEach((card) => console.log(card));
 
     loadGitlabGithubData(urlGitHubProfileData);
     loadGitlabGithubData(urlGitHubRepositories);
+
+    
 }
+
+
+
 
 function handleClick(event) {
     if (event.target.hasAttribute("value")) {
@@ -115,8 +120,39 @@ async function loadGitlabGithubData(URL){
         console.log("here comes the data")
         console.log(data);
 
-        // return data: 
-        return data;
+        // TODO 4: use properties 
+        if(URL === urlGitHubProfileData){
+            const gitHubName = document.querySelector("#github-name");
+            const gitHubAvatar = document.querySelector("#github-avatar");
+            const gitHubBio = document.querySelector("#github-bio");
+            const gitHubEmployer = document.querySelector("#github-employer");
+            const gitHubCreationDate = document.querySelector("#github-creation-date");
+            const gitHubNumberOfPublicRepositories = document.querySelector("#github-amount-public-repos");
+            const gitHubNumberOfFollowers = document.querySelector("#github-amount-followers");
+            const gitHubNumberOfFolling = document.querySelector("#github-amount-following");
+            const gitHubProfileURL = document.querySelector("#github-profile-url");
+            
+            gitHubName.innerHTML = `${data.name}`;
+            gitHubAvatar.src = `${data.avatar_url}`;
+            gitHubBio.innerHTML = `${data.bio}`
+            gitHubEmployer.innerHTML = `Studying at ${data.company}`
+            gitHubCreationDate.innerHTML = `Since ${data.created_at}`
+            gitHubNumberOfPublicRepositories.innerHTML = `Public repositories: ${data.public_repos}`
+            gitHubNumberOfFollowers.innerHTML = `Followers: ${data.followers}`
+            gitHubNumberOfFolling.innerHTML = `Following : ${data.followers}`
+
+            
+            gitHubProfileURL.href = `${data.url}`;
+            gitHubProfileURL.innerHTML = `${data.name}`;
+            
+            
+        }
+        if(URL === urlGitHubRepositories){
+                // console.log("jajaja")
+            }
+
+
+        // return data;
 
     }
     catch(error){
@@ -125,7 +161,7 @@ async function loadGitlabGithubData(URL){
 }
 
 // async function buildProfileData(){
-//     const bla = loadGitlabGithubData(urlGitHubProfileData);
+//     const bla = await loadGitlabGithubData(urlGitHubProfileData);
 //     console.log("check this out")
 //     console.log(bla)
 // }
