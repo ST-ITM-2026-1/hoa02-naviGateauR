@@ -86,6 +86,8 @@ Extend your static portfolio (from Assignment 1) by integrating interactive and 
 - Updated live version of your portfolio on GitHub Pages.
 
 
-https://github.com/ST-ITM-2026-1/hoa02-naviGateauR
+https://st-itm-2026-1.github.io/hoa02-naviGateauR/contact.html
+
+
 
 
