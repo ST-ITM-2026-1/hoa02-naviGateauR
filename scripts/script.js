@@ -48,8 +48,8 @@ if (filterButtons) {
     projectCards = document.querySelectorAll(".project-card");
     // projectCards.forEach((card) => console.log(card));
 
-    loadGitlabGithubData(urlGitHubProfileData);
-    loadGitlabGithubData(urlGitHubRepositories);
+    fetchAndDisplayGithubGitlabData(urlGitHubProfileData);
+    fetchAndDisplayGithubGitlabData(urlGitHubRepositories);
 
     
 }
@@ -108,7 +108,7 @@ function closeEye() {
 }
 
 
-async function loadGitlabGithubData(URL){
+async function fetchAndDisplayGithubGitlabData(URL){
     try{
         // TODO 1: Use fetch() with one API endpoint
         const response = await fetch(URL);
@@ -117,8 +117,8 @@ async function loadGitlabGithubData(URL){
         const data = await response.json();
     
         // TODO 3: Inspect the data using console.log()
-        console.log("here comes the data")
-        console.log(data);
+        // console.log("here comes the data")
+        // console.log(data);
 
         // TODO 4: use properties 
         if(URL === urlGitHubProfileData){
@@ -148,7 +148,23 @@ async function loadGitlabGithubData(URL){
             
         }
         if(URL === urlGitHubRepositories){
-                // console.log("jajaja")
+                const repoName = document.querySelector("#repository-cards > article > header > h4");
+                const repoTopic = document.querySelector("#github-topic");
+                const repoDescr = document.querySelector("#repo-description");
+                const repoPrimaryLanguage = document.querySelector("#repo-primary-language");
+                const repoForksCount = document.querySelector("#forks-count");
+                const repoStargazersCount = document.querySelector("#stargazers-count");
+                const repoSize = document.querySelector("#repo-size");
+
+                data.forEach((repo) => {
+                    repoName.innerHTML = `${repo.name}`
+                    repo.topics.forEach(topic => repoTopic.insertAdjacentHTML('afterend', `<span class="project-category-type">${topic}</span>` ));
+                    repoDescr.innerHTML = `${repo.description}`;
+                    repoPrimaryLanguage.innerHTML = `Primary Language: ${repo.language}`;
+                    repoForksCount.innerHTML = `Forks Count: ${repo.forks_count}`;
+                    repoStargazersCount.innerHTML = `Star Count: ${repo.stargazers_count}`;
+                    repoSize.innerHTML = `Size: ${repo.size}`;
+                })
             }
 
 
@@ -160,8 +176,3 @@ async function loadGitlabGithubData(URL){
     }
 }
 
-// async function buildProfileData(){
-//     const bla = await loadGitlabGithubData(urlGitHubProfileData);
-//     console.log("check this out")
-//     console.log(bla)
-// }
