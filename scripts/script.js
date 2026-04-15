@@ -35,7 +35,11 @@ function init() {
 
     test = document.querySelector(".test");
     const filterButtons = document.querySelector(".filter-buttons")
-    filterButtons.addEventListener("click", handleClick);
+    if (filterButtons){
+        filterButtons.addEventListener("click", handleClick);
+    } else {
+        console.log("no filter buttons on this page!");
+    }
 
     projectCards = document.querySelectorAll(".project-card");
     projectCards.forEach((card) => console.log(card));
