@@ -7,7 +7,9 @@
     --biotext-bg: #fff1dd;
 }
 
-@media(prefers-color-scheme: dark){
+
+/* überschreibt aktuell in der Nacht den Switch auf hell*/
+/* @media(prefers-color-scheme:dark){
     :root {
     --bg-color: #2d251e;          
     --text-color: #ffb380;        
@@ -16,7 +18,7 @@
     --form-bg: rgba(80, 70, 60, 1);  
     --biotext-bg: rgba(80, 70, 60, 1);
     }
-}
+} */
 
 
 [color-scheme = dark]:root {
