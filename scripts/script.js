@@ -48,8 +48,8 @@ if (filterButtons) {
     projectCards = document.querySelectorAll(".project-card");
     // projectCards.forEach((card) => console.log(card));
 
-    fetchAndDisplayGithubGitlabData(urlGitHubProfileData);
-    fetchAndDisplayGithubGitlabData(urlGitHubRepositories);
+    fetchAndDisplayGithubData(urlGitHubProfileData);
+    fetchAndDisplayGithubData(urlGitHubRepositories);
 
     
 }
@@ -108,7 +108,7 @@ function closeEye() {
 }
 
 
-async function fetchAndDisplayGithubGitlabData(URL){
+async function fetchAndDisplayGithubData(URL){
     try{
         // TODO 1: Use fetch() with one API endpoint
         const response = await fetch(URL);
@@ -118,7 +118,7 @@ async function fetchAndDisplayGithubGitlabData(URL){
     
         // TODO 3: Inspect the data using console.log()
         // console.log("here comes the data")
-        // console.log(data);
+        console.log(data);
 
         // TODO 4: use properties 
         if(URL === urlGitHubProfileData){
@@ -148,28 +148,50 @@ async function fetchAndDisplayGithubGitlabData(URL){
             
         }
         if(URL === urlGitHubRepositories){
-                const repoName = document.querySelector("#repository-cards > article > header > h4");
-                const repoTopic = document.querySelector("#github-topic");
-                const repoDescr = document.querySelector("#repo-description");
-                const repoPrimaryLanguage = document.querySelector("#repo-primary-language");
-                const repoForksCount = document.querySelector("#forks-count");
-                const repoStargazersCount = document.querySelector("#stargazers-count");
-                const repoSize = document.querySelector("#repo-size");
+                const gitHubProjectsContainer = document.querySelector("#repository-cards-container");
+                gitHubProjectsContainer.classList.add("projects-container");
+                
 
                 data.forEach((repo) => {
-                    repoName.innerHTML = `${repo.name}`
-                    repo.topics.forEach(topic => repoTopic.insertAdjacentHTML('afterend', `<span class="project-category-type">${topic}</span>` ));
-                    repoDescr.innerHTML = `${repo.description}`;
-                    repoPrimaryLanguage.innerHTML = `Primary Language: ${repo.language}`;
-                    repoForksCount.innerHTML = `Forks Count: ${repo.forks_count}`;
-                    repoStargazersCount.innerHTML = `Star Count: ${repo.stargazers_count}`;
-                    repoSize.innerHTML = `Size: ${repo.size}`;
+                    const projectCard = document.createElement("article");
+                    projectCard.classList.add("project-card");
+                    const header = document.createElement("header");
+                    const repoName = document.createElement("h4");
+                    repoName.textContent = repo.name || "No name";
+                    header.appendChild(repoName);
+                    
+                    // repo.topics.forEach(topic => {
+                        // const topicSpan = document.createElement("span");
+                        // })
+                        
+                    projectCard.appendChild(header);
+                    
+                    const repoDescr = document.createElement("p");
+                    repoDescr.textContent = repo.description || "No description";
+                    projectCard.appendChild(repoDescr);
+
+                
+                    const repoLanguage = document.createElement("p");
+                    repoLanguage.textContent = `Primary Language: ${repo.language || "None"}`;
+                    projectCard.appendChild(repoLanguage);
+
+                    
+                    const repoForks = document.createElement("p");
+                    repoForks.textContent = `Forks: ${repo.forks_count}`;
+                    projectCard.appendChild(repoForks);
+
+                    
+                    const repoStars = document.createElement("p");
+                    repoStars.textContent = `Stars: ${repo.stargazers_count}`;
+                    projectCard.appendChild(repoStars);
+                
+                    const repoSize = document.createElement("p");
+                    repoSize.textContent = `Size: ${repo.size} KB`;
+                    projectCard.appendChild(repoSize);
+
+                    gitHubProjectsContainer.appendChild(projectCard);
                 })
             }
-
-
-        // return data;
-
     }
     catch(error){
         console.log("oops, an error occured! have a look: ", error)
