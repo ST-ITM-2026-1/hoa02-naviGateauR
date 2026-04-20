@@ -31,9 +31,9 @@
     }
 
 
-
 body {
     background-color: var(--bg-color);
+    font-family: 'Zurich';
 }
 
 nav > ul {
@@ -74,16 +74,20 @@ main {
     
 }
 
-.filter-buttons{
+.filter-buttons-container{
     display: flex;
     justify-content: center;
 }
 
-.filter-buttons > ul > li{
+.filter-buttons-container > ul > li{
     background: var(--card-bg);
     border: 2px solid black;
     border-radius: 5px;
     padding: 10px;
+}
+
+.filter-buttons-container > ul > li:hover{
+    transform: scale(1.15);
 }
 
 
@@ -101,6 +105,10 @@ main {
     margin: 12px;
     padding: 12px;
     font-size: 1.3em;
+}
+
+.project-card:hover{
+    transform: scale(1.05);
 }
 
 .project-category-type{
@@ -135,6 +143,10 @@ main {
 
 }
 
+.filterIndicator{
+    font-size: 1.3em;
+}
+
 .hidden{
     display: none;
 }
@@ -153,6 +165,10 @@ main {
     margin: 12px;
     padding: 12px;
     font-size: 1.3em;
+}
+
+.skill-card:hover{
+    transform: scale(1.075);
 }
 
 #contact-form {

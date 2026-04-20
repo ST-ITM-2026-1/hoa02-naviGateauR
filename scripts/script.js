@@ -4,7 +4,7 @@
 let root;
 let iconOpenEye;
 let iconClosedEye;
-let test;
+let filterIndicator;
 let projectCards;
 
 const urlGitHubProfileData = "https://api.github.com/users/naviGateauR"
@@ -37,8 +37,8 @@ function init() {
         openEye();
     }
 
-    test = document.querySelector(".test");
-    const filterButtons = document.querySelector(".filter-buttons");
+    filterIndicator = document.querySelector(".filterIndicator");
+    const filterButtons = document.querySelector(".filter-buttons-container");
 if (filterButtons) {
     filterButtons.addEventListener("click", handleClick);
 } else {
@@ -60,7 +60,7 @@ if (filterButtons) {
 function handleClick(event) {
     if (event.target.hasAttribute("value")) {
         console.log(`button clicked: ${event.target.innerHTML}`);
-        test.textContent = `Filter: ${event.target.innerHTML}`;
+        filterIndicator.textContent = `Filter: ${event.target.innerHTML}`;
         filterProjects(event.target.innerHTML);
     }
 }
@@ -188,6 +188,11 @@ async function fetchAndDisplayGithubData(URL){
                     const repoSize = document.createElement("p");
                     repoSize.textContent = `Size: ${repo.size} KB`;
                     projectCard.appendChild(repoSize);
+
+                    const repoURL = document.createElement("a");
+                    repoURL.textContent = repo.html_url;
+                    repoURL.href = repo.html_url;
+                    projectCard.appendChild(repoURL);
 
                     gitHubProjectsContainer.appendChild(projectCard);
                 })
